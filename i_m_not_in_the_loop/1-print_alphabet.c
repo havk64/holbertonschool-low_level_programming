@@ -1,6 +1,6 @@
 #include "my_functions.h"
 
-/*Function print_alphabet that accepts no argument and loop through each letter of alphabet
+/*The function print_alphabet accepts no argument and iterate through each letter of alphabet
 printing each letter utilizing the print_char function.*/
 void print_alphabet(void)
 {
