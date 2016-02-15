@@ -1,5 +1,6 @@
 #include "my_functions.h"
-
+/*=> Prints all possible combinations of single-digit numbers.
+  => On one line! */
 void print_combination_1(void)
 {
 	int n;
