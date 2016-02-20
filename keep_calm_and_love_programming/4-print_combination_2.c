@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include "my_functions.h"
-
+/*=> This function prints all possible combinations of two digits.*/
 void print_combination_2(void)
 {
 	int i;

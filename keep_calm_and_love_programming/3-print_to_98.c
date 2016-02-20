@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/*=> This function that takes an integer as argument, prints all numbers from its value to 98, followed by a new line. */
 void print_to_98(int n)
 {
 	int i;
