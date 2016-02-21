@@ -1,2 +1,2 @@
 void print_char(int n);
-void middle(int n);
+void block(int n, char s, char m);

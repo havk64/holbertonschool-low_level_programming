@@ -1,4 +1,5 @@
-void print_square(int);
+#include <stdio.h>
+void print_square(int n);
 int main(void)
 {
   print_square(1);
