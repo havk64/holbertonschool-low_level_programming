@@ -1,5 +1,5 @@
 #include  <limits.h>
-
+/*=> This function returns the first digit of a number.*/
 int first_digit(int n)
 {
 	int power;
