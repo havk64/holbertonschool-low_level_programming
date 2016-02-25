@@ -1,9 +1,14 @@
+#include  <limits.h>
+
 int first_digit(int n)
 {
 	int power;
 	unsigned long  number;
 	power = 1;
-	if(n < 0){
+	if(n == INT_MIN){
+		n = n/-10;
+	} 
+	else if(n < 0){
 		n = -n;
 	}
 	number = n;
