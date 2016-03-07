@@ -1,3 +1,4 @@
+/* This function accepts two pointers and exchange its values.*/
 void swap_int(int *a, int *b)
 {
   int temp = *a; /* Assign to the variable temp the "value" that a points to. */
