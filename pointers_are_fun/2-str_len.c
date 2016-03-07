@@ -1,3 +1,4 @@
+/*This function accepts a string as argument as returns its length */
 int str_len(char *s)
 {
 
@@ -7,3 +8,16 @@ for(i = 0; *(s + i) != '\0'; i++) {
 	}
     return len++;
 }
+
+/* Another solution could be:
+int str_len(char *s)
+{
+  int len;
+  len = 0;
+  while( *s > 0) {
+    len++;
+    s++;
+  }
+  return len;
+}
+*/
