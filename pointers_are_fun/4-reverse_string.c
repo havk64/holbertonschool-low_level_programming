@@ -1,3 +1,4 @@
+/* This function accepts a string(array of characteres) and returns its length.*/
 int str_len(char *s)
 {
   int len;
