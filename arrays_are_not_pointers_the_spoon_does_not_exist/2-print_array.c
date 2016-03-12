@@ -42,17 +42,14 @@ void print_array(int *a, int n) /* This function prints all values of a given ar
 {
   int i;
   i = 0;
-  if(n == 0) {
-    print_char('\n');
-  }
+  
   while(i < n) {
-    print_number(*(a + i));
-    if(i == (n - 1)) {
-      print_char('\n');
-    } else {
+    if(i != 0) {
       print_char(',');
       print_char(' ');
     }
+    print_number(*(a + i));
     i++;
   }
+  print_char('\n');
 }
