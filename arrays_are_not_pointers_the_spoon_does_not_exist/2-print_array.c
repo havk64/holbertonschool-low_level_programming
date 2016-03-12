@@ -38,7 +38,7 @@ void print_number(int n) /*=> Control flow to use function print accordingly */
   }
 }
 
-void print_array(int *a, int n)
+void print_array(int *a, int n) /* This function prints all values of a given array of integers */
 {
   int i;
   i = 0;
