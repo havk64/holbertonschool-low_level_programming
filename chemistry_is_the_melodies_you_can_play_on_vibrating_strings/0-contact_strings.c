@@ -17,6 +17,7 @@ char *concat_strings(char *dest, const char *src)
 }
 
 /* ===============================================
+
 Or... more compactable, less readable: 
 
 char *concat_strings(char *dest, const char *src)
