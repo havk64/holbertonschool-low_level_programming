@@ -7,7 +7,7 @@ char *nconcat_strings(char *dest, const char *src, int n)
 	while( *dest ) {
 		dest++;
 	}
-	while(n) {
+	while( n ) {
 		*dest = *src;
 		dest++;
 		src++;
