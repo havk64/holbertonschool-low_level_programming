@@ -1,6 +1,8 @@
 int print_char(char c);
 
-/* This function concatenates two strings. */
+/* ========================================================================= *
+ * Function is similar to strcat() and is used to concatenate two strings.   *
+ * ========================================================================= */
 char *concat_strings(char *dest, const char *src)
 {
   char *cdest = dest;
