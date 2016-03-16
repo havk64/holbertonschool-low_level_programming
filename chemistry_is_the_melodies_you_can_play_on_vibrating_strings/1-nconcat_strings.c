@@ -10,7 +10,7 @@ char *nconcat_strings(char *dest, const char *src, int n)
 	        dest++;
 	while( *src && n-- )
 		*dest++ = *src++;
-	*dest = '\0';
+	*dest = 0;
 	return cdest;
 }
  
