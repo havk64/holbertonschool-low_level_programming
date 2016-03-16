@@ -15,6 +15,7 @@ char *nconcat_strings(char *dest, const char *src, int n)
 		if(*src == 0) {
 			break;
 		}
+		*dest = '\0';
 	}
 	return cdest;
 }
