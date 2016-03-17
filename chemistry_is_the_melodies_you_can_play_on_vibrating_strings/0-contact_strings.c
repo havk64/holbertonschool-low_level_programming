@@ -5,32 +5,32 @@ int print_char(char c);
  * ========================================================================= */
 char *concat_strings(char *dest, const char *src)
 {
-  char *cdest = dest;
+    char *cdest = dest;
 
-  while (*dest) {
-    dest++;
-  }
-  while(*src) {
-    *dest = *src;
-    src++;
-    dest++;
-  }
-  return cdest;
+    while (*dest) {
+	dest++;
+    }
+    while(*src) {
+	*dest = *src;
+	src++;
+	dest++;
+    }
+    return cdest;
 }
 
 /* ===============================================
 
-Or... more compactable, less readable: 
+   Or... more compactable, less readable: 
 
-char *concat_strings(char *dest, const char *src)
-{
-  char *cdest = dest;
+   char *concat_strings(char *dest, const char *src)
+   {
+       char *cdest = dest;
 
-  while (*dest)
-    dest++;
-  while ((*dest++ = *src++))
-    ;
-  return cdest;
-}
+       while (*dest)
+	   dest++;
+       while ((*dest++ = *src++))
+	   ;
+	   return cdest;
+   }
 
-================================================== */
+   ================================================== */
