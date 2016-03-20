@@ -1,5 +1,5 @@
 /* ========================================================================= *
- *           This function that encode a string using rot13.
+ *           This function that encode/decode a string using rot13.
  * ========================================================================= */
 char *rot13(char *c)
 {
