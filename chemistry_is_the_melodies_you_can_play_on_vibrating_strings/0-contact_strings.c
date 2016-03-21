@@ -5,7 +5,7 @@ int print_char(char c);
  * ========================================================================= */
 char *concat_strings(char *dest, const char *src)
 {
-    char *cdest = dest;
+    char *s = dest;
 
     while (*dest) {
 	dest++;
@@ -15,7 +15,7 @@ char *concat_strings(char *dest, const char *src)
 	src++;
 	dest++;
     }
-    return cdest;
+    return s;
 }
 
 /* ===============================================
@@ -24,13 +24,13 @@ char *concat_strings(char *dest, const char *src)
 
    char *concat_strings(char *dest, const char *src)
    {
-       char *cdest = dest;
+       char *s = dest;
 
        while (*dest)
 	   dest++;
        while ((*dest++ = *src++))
 	   ;
-	   return cdest;
+	   return s;
    }
 
    ================================================== */
