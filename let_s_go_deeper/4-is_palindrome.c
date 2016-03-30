@@ -3,8 +3,7 @@
  * =================================================================== */
 int find_length(char *s, int i)
 {
-    if(*(s + i) == 0)
-	return (i);
+    if(*(s + i) == 0) return (i);
     return (find_length(s, i+1));
 }
 
@@ -13,10 +12,8 @@ int find_length(char *s, int i)
  * =================================================================== */
 int check(char *s, int len)
 {
-    if(len < 0)
-	return (1);
-    if(*s == *(s + len - 1))
-	return(check(s + 1 , len - 2));
+    if(len < 0) return (1);
+    if(*s == *(s + len - 1)) return(check(s + 1 , len - 2));
     return (0);
 }
 
