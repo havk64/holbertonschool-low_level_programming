@@ -4,12 +4,8 @@
  * =================================================================== */
 int power(int x, int y)
 {
-    if(x < 0 || y < 0)
-	return (-1);
-    else if(y == 0)
-	return (1);
-    else if( y == 1)
-	return x;
-    else
-	return x * power(x, y - 1);
+    if(x < 0 || y < 0) return (-1);
+    else if(y == 0) return (1);
+    else if( y == 1) return x;
+    return x * power(x, y - 1);
 }
