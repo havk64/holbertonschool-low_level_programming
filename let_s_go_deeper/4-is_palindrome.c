@@ -1,3 +1,6 @@
+/* =================================================================== *
+ *              This function finds the lenght of a string             *
+ * =================================================================== */
 int find_length(char *s, int i)
 {
     if(*(s + i) == 0)
@@ -5,6 +8,9 @@ int find_length(char *s, int i)
     return (find_length(s, i+1));
 }
 
+/* =================================================================== *
+ *       This function checks if the extreme letters are equal         *
+ * =================================================================== */
 int check(char *s, int len)
 {
     if(len < 0)
@@ -14,6 +20,9 @@ int check(char *s, int len)
     return (0);
 }
 
+/* =================================================================== *
+ *  This function returns 1 if a string is a palindrome and 0 if not.  *
+ * =================================================================== */
 int is_palindrome(char *s)
 {
     int len;
