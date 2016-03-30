@@ -8,6 +8,8 @@ int power(int x, int y)
 	return (-1);
     else if(y == 0)
 	return (1);
+    else if( y == 1)
+	return x;
     else
-	return x * power(x, y-1);
+	return x * power(x, y - 1);
 }
