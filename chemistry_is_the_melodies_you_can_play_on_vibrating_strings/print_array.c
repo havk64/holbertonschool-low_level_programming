@@ -69,3 +69,4 @@ void print_array(int *a, int n)
 	i++;
     }
     print_char('\n');
+}
