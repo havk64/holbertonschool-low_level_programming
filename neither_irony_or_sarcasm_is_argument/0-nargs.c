@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
+
+/* ========================================================= *
+ * This function prints the number of arguments given to it. *
+ * ========================================================= */
 int print_char(char c)
 {
     return(write(1,&c,1));
