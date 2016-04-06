@@ -5,16 +5,7 @@ is positive, N if the number is negative, and Z if the number is zero, using con
 to do the job */
 void positive_or_not(int n)
 {
-	if(n > 0)
-	{
-		print_char('P');
-	}
-	else if(n<0)
-	{
-		print_char('N');
-	}
-	else
-	{
-		print_char('Z');
-	}
+    if(n > 0) print_char('P');
+    else if(n < 0) print_char('N');
+    else print_char('Z');
 }
