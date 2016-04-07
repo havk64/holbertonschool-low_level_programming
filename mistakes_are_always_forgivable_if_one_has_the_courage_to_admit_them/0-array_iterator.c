@@ -4,8 +4,15 @@
  * ============================================================== */
 void array_iterator(int *array, int size, void (*action_func)(int))
 {
-  int i;
+  int i = 0;
+  while(i < size) {
+    action_func(array[i]);
+    i++;
+  }
+}
+/*
   for(i = 0; i < size; i++) {
     (*action_func)(array[i]);
   }
 }
+*/
