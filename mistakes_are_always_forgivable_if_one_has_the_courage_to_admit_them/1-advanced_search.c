@@ -1,3 +1,8 @@
+/* ============================================================= *
+ * This function searches for an integer stored in an array.     *
+ * advanced_search takes a pointer to the function to be used to *
+ * compare values.                                               *
+ * ============================================================= */
 int advanced_search(int *array, int size, int (*check_func)(int))
 {
   int i;
