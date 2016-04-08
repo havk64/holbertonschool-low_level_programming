@@ -12,6 +12,8 @@ OBJ := 0-absolute.c 0-uppercase_string.c 1-swap_int.c 2-str_len.c 4-positive_or_
 SRC := $(foreach file, $(OBJ), $(SOURCE)$(file)) 
 OBJS := $(patsubst %.c, %.o, $(SRC))
 
+.PHONY: all
+
 all: libholbertonschool.a clean
 	@echo " * ============================================================== *"
 	@echo " *	*	*	*	*	*	*	*	 *"
