@@ -20,7 +20,7 @@ all: libholbertonschool.a clean
 	@echo " * ============================================================== *"
 libholbertonschool.a: $(OBJS)
 	@echo " * ============================================================== *"
-	@echo " * 			Creating the library.			 *"
+	@echo " * 		   Creating the library.			 *"
 	@echo " * ============================================================== *"
 	ar -rcs libholbertonschool.a $(OBJS)
 
