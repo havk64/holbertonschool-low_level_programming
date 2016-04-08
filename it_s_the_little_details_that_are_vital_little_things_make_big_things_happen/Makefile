@@ -14,11 +14,13 @@ OBJS := $(patsubst %.c, %.o, $(SRC))
 
 all: libholbertonschool.a clean
 	@echo " * ============================================================== *"
+	@echo " *	*	*	*	*	*	*	*	 *"
 	@echo " * Holberton School, the best Software Engineer School EVER ! ! ! *"
+	@echo " *	*	*	*	*	*	*	*	 *"
 	@echo " * ============================================================== *"
 libholbertonschool.a: $(OBJS)
 	@echo " * ============================================================== *"
-	@echo " * Creating the library.						 *"
+	@echo " * 			Creating the library.			 *"
 	@echo " * ============================================================== *"
 	ar -rcs libholbertonschool.a $(OBJS)
 
