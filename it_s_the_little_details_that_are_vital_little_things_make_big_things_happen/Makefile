@@ -1,6 +1,6 @@
 # * ===========================================================	*
 # *  Project of introduction to Makefile by Alexandre Gautier 	*
-# *  This Makefile builds your libholbertonschool.a library.	*
+# *  This Makefile builds our libholbertonschool.a library.	*
 # *  by Alexandro de Oliveira, for Holberton School.		*			 
 # * =========================================================== *
 
