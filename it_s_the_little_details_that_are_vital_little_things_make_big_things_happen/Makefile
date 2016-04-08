@@ -16,26 +16,27 @@ OBJ := $(patsubst %.c, %.o, $(SRC))
 all: libholbertonschool.a clean
 	@echo " * ============================================================== *"
 	@echo " *	*	*	*	*	*	*	*	 *"
-	@echo " * Holberton School, the best Software Engineer School EVER ! ! ! *"
+	@echo " * Holberton School, the best Software Engineer School, EVER ! ! ! *"
 	@echo " *	*	*	*	*	*	*	*	 *"
 	@echo " * ============================================================== *"
 libholbertonschool.a: $(OBJ)
 	@echo " * ============================================================== *"
-	@echo " * 		   Creating the library.			 *"
+	@echo " * 		Creating the library.				 *"
 	@echo " * ============================================================== *"
-	ar -rcs libholbertonschool.a $(OBJ)
+	@ar -rcs libholbertonschool.a $(OBJ)
 
 $(SOURCE)%.o:$(SOURCE)%.c
-	@echo " * ============================================================== *"
-	@echo " * 		Compiling the source code.			 *"
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo " The compiler $(CC) now is creating the $@ object. "
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 
 clean: 
 	@echo " * ============================================================== *"
-	@echo " * Removing object files *.o 					 *"
-	rm -f src/*.o  #   <<<<  Cleaning things up ! ! ! <<<<<<<<===
+	@echo " * 		Removing object files				 *"
+	@rm -f $(OBJ)
+	@echo " * 		Directory $(SOURCE) is clean now!		 *"
+	@echo " * ============================================================== *"
 re:
 	@echo " * ============================================================== *"
 	@echo " * 		Applying the "re" rule.				 *"
