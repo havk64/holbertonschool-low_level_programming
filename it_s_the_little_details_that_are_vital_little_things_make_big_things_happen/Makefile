@@ -15,22 +15,23 @@ OBJS := $(patsubst %.c, %.o, $(SRC))
 all: libholbertonschool.a clean
 
 libholbertonschool.a: $(OBJS)
-	@echo "============="
+	@echo "======================="
 	@echo Creating the library.
 	ar -rcs libholbertonschool.a $(OBJS)
 
 $(SOURCE)%.o:$(SOURCE)%.c
-	@echo "============="
+	@echo "======================="
 	@echo Compiling the source code.
 	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 
 clean: 
+	@echo "======================="
 	@echo Removing object files *.o
 	rm -f src/*.o
 re:
-	@echo "============="
+	@echo "======================="
 	@echo Applying the "re" rule.
 	make clean
 	make all
