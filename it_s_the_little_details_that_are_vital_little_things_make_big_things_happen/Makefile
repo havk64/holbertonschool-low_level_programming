@@ -13,25 +13,28 @@ SRC := $(foreach file, $(OBJ), $(SOURCE)$(file))
 OBJS := $(patsubst %.c, %.o, $(SRC))
 
 all: libholbertonschool.a clean
-
+	@echo " * ============================================================== *"
+	@echo " * Holberton School, the best Software Engineer School EVER ! ! ! *"
+	@echo " * ============================================================== *"
 libholbertonschool.a: $(OBJS)
-	@echo "======================="
-	@echo Creating the library.
+	@echo " * ============================================================== *"
+	@echo " * Creating the library.						 *"
+	@echo " * ============================================================== *"
 	ar -rcs libholbertonschool.a $(OBJS)
 
 $(SOURCE)%.o:$(SOURCE)%.c
-	@echo "======================="
-	@echo Compiling the source code.
+	@echo " * ============================================================== *"
+	@echo " * 		Compiling the source code.			 *"
 	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 
 clean: 
-	@echo "======================="
-	@echo Removing object files *.o
-	rm -f src/*.o
+	@echo " * ============================================================== *"
+	@echo " * Removing object files *.o 					 *"
+	rm -f src/*.o  #   <<<<  Cleaning things up ! ! ! <<<<<<<<===
 re:
-	@echo "======================="
-	@echo Applying the "re" rule.
-	make clean
+	@echo " * ============================================================== *"
+	@echo " * 		Applying the "re" rule.				 *"
+	@echo " * ============================================================== *"
 	make all
