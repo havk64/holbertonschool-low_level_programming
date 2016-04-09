@@ -4,41 +4,39 @@
 # *  by Alexandro de Oliveira, for Holberton School.		*			 
 # * =========================================================== *
 
-CC := gcc
-INCLUDE := inc/
-CFLAGS := -Wall -pedantic -Werror -Wextra -I$(INCLUDE).
-SOURCE := src/
-SRC := $(shell find $(SOURCE) -name '*.c')
-OBJ := $(patsubst %.c, %.o, $(SRC))
+CC	:= @gcc
+INC	:= inc/
+CFLAGS	:= -Wall -pedantic -Werror -Wextra -I$(INC).
+VPATH	:= src/
+SRC	:= $(shell find $(VPATH) -name '*.c')
+OBJECTS	:= $(SRC:.c=.o) # Before it was: $(patsubst %.c, %.o, $(SRC) <<<==<
 
-.PHONY: all
-
-all: libholbertonschool.a clean
-	@echo " * ============================================================== *"
-	@echo " *	*	*	*	*	*	*	*	 *"
+all: libholbertonschool.a
+	@echo " * =============================================================== *"
+	@echo " *	*	*	*	*	*	*	*	  *"
 	@echo " * Holberton School, the best Software Engineer School, EVER ! ! ! *"
-	@echo " *	*	*	*	*	*	*	*	 *"
-	@echo " * ============================================================== *"
-libholbertonschool.a: $(OBJ)
-	@echo " * ============================================================== *"
-	@echo " * 		Creating the library.				 *"
-	@echo " * ============================================================== *"
-	@ar -rcs libholbertonschool.a $(OBJ)
+	@echo " *	*	*	*	*	*	*	*	  *"
+	@echo " * =============================================================== *"
+libholbertonschool.a: $(OBJECTS)
+	@echo " * =============================================================== *"
+	@echo " * 		Creating the library...				  *"
+
+	@ar -rcs libholbertonschool.a $(OBJECTS)
+	@echo " * 		Done ! ! !					  *"
+	@echo " * =============================================================== *"
 
 $(SOURCE)%.o:$(SOURCE)%.c
-	@echo " The compiler $(CC) now is creating the $@ object. "
+	@echo " The compiler $(CC) now is creating the $@ object, from $<. "
 	@$(CC) $(CFLAGS) -c $< -o $@
-
-.PHONY: clean
 
 clean: 
 	@echo " * ============================================================== *"
 	@echo " * 		Removing object files				 *"
-	@rm -f $(OBJ)
+	@rm -f $(OBJECTS)
 	@echo " * 		Directory $(SOURCE) is clean now!		 *"
 	@echo " * ============================================================== *"
-re:
+
+re: $(OBJECTS)
 	@echo " * ============================================================== *"
 	@echo " * 		Applying the "re" rule.				 *"
 	@echo " * ============================================================== *"
-	make all
