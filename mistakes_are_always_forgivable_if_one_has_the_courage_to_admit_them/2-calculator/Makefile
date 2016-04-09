@@ -8,7 +8,7 @@ SRC	:= $(shell find . -name '*.c')
 OBJECT	:= $(SRC:.c=.o)
 
 all: 2-calculator 
-	@echo Done ! ! !
+	@echo BOOOMMMM ! ! !
 	@echo Congrats ! ! !
 
 2-calculator: $(OBJECT)
