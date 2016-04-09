@@ -4,7 +4,7 @@
 # *  by Alexandro de Oliveira, for Holberton School.		*			 
 # * =========================================================== *
 
-CC	:= @gcc
+CC	:= gcc
 INC	:= inc/
 CFLAGS	:= -Wall -pedantic -Werror -Wextra -I$(INC).
 VPATH	:= src/
@@ -25,8 +25,8 @@ libholbertonschool.a: $(OBJECTS)
 	@echo " * 		Done ! ! !					  *"
 	@echo " * =============================================================== *"
 
-$(SOURCE)%.o:$(SOURCE)%.c
-	@echo " The compiler $(CC) now is creating the $@ object, from $<. "
+$(OBJECTS):$(SRC)
+	@echo " The compiler $(CC) now is creating the object:  $@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
