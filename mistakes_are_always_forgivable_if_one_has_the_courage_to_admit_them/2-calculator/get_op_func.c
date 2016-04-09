@@ -1,6 +1,10 @@
 #include "my_functions.h"
 #define NULL (void*)0
 
+/* ===================================================================== *
+ * This function takes a character as parameter, which is supposed to be *
+ *  one of the operator characters ( +, -, *, /, %)                      *
+ * ===================================================================== */
 int (*get_op_func(char c))(int a, int b)
 {
     char operator[5] = "+-*/%";
