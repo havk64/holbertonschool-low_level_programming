@@ -11,10 +11,10 @@ all: 2-calculator
 	@echo BOOOMMMM ! ! !
 	@echo Congrats ! ! !
 
-2-calculator: $(OBJECTS) # To create the executable the Objects are required.
+2-calculator: $(OBJECTS) # To create the executable the Objects are required. Using implicit rules.
 	@echo Creating the executable file: $@
 
-$(OBJECTS): $(SRC)
+$(OBJECTS): $(SRC) # Using GNU-make implicit rules
 	@echo Creating the $@ object file...
 clean:
 	rm -f $(OBJECTS)
