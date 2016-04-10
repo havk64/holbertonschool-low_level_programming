@@ -21,7 +21,8 @@ libholbertonschool.a: $(OBJECTS)
 	@echo " * =============================================================== *"
 	@echo " * 		Creating the library...				  *"
 	@ar -rcs libholbertonschool.a $(OBJECTS)
-	@echo " * 		Done ! ! !					  *"
+	@echo " * 		BOOOMMMM ! ! !					  *"
+	@echo " *		CONGRATS ! ! !					  *"
 	@echo " * =============================================================== *"
 
 $(OBJECTS):$(SRC)
