@@ -1,5 +1,8 @@
 #include <stdlib.h>
-
+/* ==================================================== *
+ * This function returns a pointer to a newly created 2 *
+ * dimensional integers grid.			        *
+ * ==================================================== */
 int **alloc_grid(int width, int height)
 {
     int i, j;
