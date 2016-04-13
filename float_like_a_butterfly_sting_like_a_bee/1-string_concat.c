@@ -20,7 +20,7 @@ char *string_concat(char *s1, char *s2)
     int i = 0;
     char *s;
     int sum = len(s1) + len(s2);
-    s = malloc(sizeof(char) * (sum));
+    s = malloc(sizeof(char) * (sum + 1 ));
     if(s != NULL) {
 	while(i < len(s1)) {
 	    s[i] = s1[i];
