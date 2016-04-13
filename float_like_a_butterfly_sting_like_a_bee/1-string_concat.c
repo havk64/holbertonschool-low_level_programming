@@ -1,5 +1,8 @@
 #include <stdlib.h>
 
+/* ==================================================== *
+ *    This functions returns the lenght of a string	* 
+ * ==================================================== */
 int len(char *s)
 {
     int i = 0;
@@ -9,6 +12,9 @@ int len(char *s)
     return i;
 }
 
+/* ==================================================== *
+ *      This function concatenate two strings.          *
+ * ==================================================== */ 
 char *string_concat(char *s1, char *s2)
 {
     int i = 0;
