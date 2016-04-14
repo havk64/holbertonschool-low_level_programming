@@ -5,10 +5,9 @@ void first_last(int n, char s, char m)
     while(i < n){
         if(i == 0 || i == (n - 1)){
             print_char(s);
-        }
-        else {
-            print_char(m);
-        }
+        } else {
+	    print_char(m);
+	}
         i++;
     }
 }
@@ -18,8 +17,7 @@ void print_square(int n)
     while( i < n ){
 	if(i == 0 || i == (n - 1)){
 	    first_last(n, 111, 45);
-	}
-	else{
+	} else {
 	    first_last(n, '|', ' ');
 	}
 	print_char('\n');
