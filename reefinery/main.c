@@ -1,4 +1,3 @@
-#include <stdio.h>
 void print_square(int n);
 int main(void)
 {
