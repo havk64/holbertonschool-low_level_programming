@@ -7,10 +7,10 @@ int main(void)
     int i;
 
     i = 4;
-    while (i > -1) 
+    while (i > -1) /* While there's items in the array. */
     {
-	print_char(a[i] + b[i] + '0');
-	i--;
+	print_char(a[i] + b[i] + '0'); /* prints the sum of two numbers of array */
+	i--;  /* descreases one */
     }
     print_char('\n');
     return (0);
