@@ -1,4 +1,7 @@
 int print_char(char c);
+/* ========================================= *
+ * This function prints '*' n times.	     *
+ * ========================================= */
 void print_ast(int n)
 {
     int i;
@@ -6,6 +9,11 @@ void print_ast(int n)
 	print_char('*');
     }
 }
+
+/* ========================================= *
+ * This function uses print_ast to print the *
+ * a triangle with n as height.		     *
+ * ========================================= */
 void print_triangle(int n)
 {
     int i;
