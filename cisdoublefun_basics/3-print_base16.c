@@ -1,4 +1,8 @@
 int print_char(char c);
+/*  ======================================== *
+ *  This function prints all the numbers of  *
+ *  base 16, from 0 to F.		     *
+ *  ======================================== */
 void print_base16(void)
 {
     int i;
