@@ -16,7 +16,7 @@ void print_square(int n)
     int i = 0;
     while( i < n ){
 	if(i == 0 || i == (n - 1)){
-	    first_last(n, 111, 45);
+	    first_last(n, 'o', '-');
 	} else {
 	    first_last(n, '|', ' ');
 	}
