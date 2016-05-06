@@ -9,9 +9,10 @@ void print(int n)
     int i, p, digit;
     i = n;
     p = 1;
-    while (i /= 10){
+
+    while (i /= 10)
         p *= 10;
-    }
+    
     while (n){
         digit = n / p;
         n %= p;
@@ -25,9 +26,9 @@ void print(int n)
 void print_string_struct(struct String *str)
 {
     int i;
-    for(i = 0; i < str->length; i++){
+    for(i = 0; i < str->length; i++)
 	print_char(str->str[i]); /* Could use (*str) too    */
-    }
+    
     print_char(','); 
     print_char(' ');
     print(str->length); /* Uses the function print to print */
