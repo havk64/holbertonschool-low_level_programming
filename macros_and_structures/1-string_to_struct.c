@@ -9,8 +9,8 @@ struct String *string_to_struct(char *str)
 {
     int i, len;
     char *m;
-    struct String s, *p; /* Initializing the variable */
-    p = &s;	 /* Assigns the address of the variable to the pointer.	*/
+    struct String *p; /* Initializing the variable */
+    p = malloc(sizeof(struct String)); /* Allocating memory to pointer	*/
     
     len = 0;
     while(*(str + len)) /* Finding the length of the string.		*/
