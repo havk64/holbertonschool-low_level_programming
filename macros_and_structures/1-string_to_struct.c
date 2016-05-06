@@ -13,17 +13,19 @@ struct String *string_to_struct(char *str)
     p = &s;	 /* Assigns the address of the variable to the pointer.	*/
     
     len = 0;
-    while(*(str + len))
+    while(*(str + len)) /* Finding the length of the string.		*/
 	len++;
     
     m = malloc(len * (sizeof(char) + 1)); /* Allocating resources	*/
     if(m != NULL) {
+
 	for(i = 0; i < len; i++) 
 	    m[i] = str[i]; /* Copying the string to str property.	*/ 
-	
 	m[i] = 0;	   /* The string needs to be NULL terminated.	*/
+
+	p->str = m;	
 	p->length = len; /* Assigning the lenght and string to objc.	*/
-	p->str = m;
+
 	return p;
     }
     return NULL;
