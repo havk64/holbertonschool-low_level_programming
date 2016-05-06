@@ -23,9 +23,10 @@ struct String *string_to_struct(char *str)
 	    m[i] = str[i]; /* Copying the string to str property.	*/ 
 	m[i] = 0;	   /* The string needs to be NULL terminated.	*/
 
-	p->str = m;	
-	p->length = len; /* Assigning the lenght and string to objc.	*/
-
+	if(p != NULL) {
+	    p->str = m;	
+	    p->length = len; /*Assigning the lenght and string to objc.	*/
+	}
 	return p;
     }
     return NULL;
