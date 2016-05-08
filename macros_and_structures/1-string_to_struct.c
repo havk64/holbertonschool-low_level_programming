@@ -13,7 +13,7 @@ struct String *string_to_struct(char *str)
     p = malloc(sizeof(struct String)); /* Allocating memory to pointer	*/
     
     len = 0;
-    while(*(str + len)) /* Finding the length of the string.		*/
+    while(str[len]) /* Finding the length of the string(Array syntax).	*/
 	len++;
     
     s = malloc(len * (sizeof(char) + 1)); /* Allocating resources	*/
