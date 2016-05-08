@@ -7,6 +7,6 @@
  */
 void free_string_struct(struct String *str)
 {
-	free(str->str);
-	free(str);
+    free(str->str);
+    free(str);
 }

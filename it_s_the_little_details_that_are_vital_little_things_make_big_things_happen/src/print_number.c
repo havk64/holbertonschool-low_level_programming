@@ -16,12 +16,12 @@ void print_number(int n) /*=> Control flow to use function print accordingly */
 
     else if(n == INT_MIN){
 	print_char('-');
-	n /= 10; n = -n;
+ 	n /= 10; n = -n;
 	print(n);
 	print_char(((n + 4) % 10) + '0');
     }
 
-    else {		    /*=> If n is negative converts to absolute value */
+    else {     /*=> If n is negative converts to absolute value */
 	print_char('-');
 	n = -n;
 	print(n); 
@@ -35,7 +35,7 @@ void print(int n)		 /*=> Uses the print_char to print each digit */
     while (number /= 10)		/*=> Finds the lenght of decimal      */
 	power *= 10;
 
-    while (n){		  /*=> Finds each digit and prints it with print_char */
+    while (n){ /*=> Finds each digit and prints it with print_char */
 	digit = n / power;
 	n %= power;
 	power /= 10;
