@@ -39,6 +39,10 @@ int add_node(List **list, char *content)
     return (0);
 }
 
+/* ===================================================  *
+ * Allocates a new node to a linked list and links it   *
+ * to the end of the list.                              *
+ * ===================================================  */
 List *params_to_list(int ac, char **av)
 {
     int i = 0;
