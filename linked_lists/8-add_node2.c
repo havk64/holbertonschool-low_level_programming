@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include "list.h"
-#include <stdio.h>
 
+/* ===================================================	*
+ * Allocates a new node to a linked list and links it	*
+ * to the end of the list.				*
+ * ===================================================	*/
 int add_node(List **list, char *content)
 {    
     int len, i;
@@ -11,7 +14,6 @@ int add_node(List **list, char *content)
 
     node = malloc(sizeof(List));
     if(node == NULL) return (1);
-    printf("Node in add_node is: %p, and the list is: %p\n",(void *) node, (void *)list);
 
     while(content[len])
         len++;
@@ -26,15 +28,13 @@ int add_node(List **list, char *content)
     node->str = s;
     node->next = NULL;
     p = *list;
-    if(p == NULL) {
-	*list = p;
-	return 0;
+    if(*list == NULL) {
+	*list = node;
+    } else {
+	p = *list;
+	while(p->next != NULL)
+	    p = p->next;
+	p->next = node;
     }
-    
-    while(p != NULL) p = p->next;
-    p->next = node;
-
-    printf("The value of list is: %p\n",(void *)  list);
-    printf("Node->str is: %s, node->next is: %p\n", node->str, (void *)node->next);
     return (0);
 }
