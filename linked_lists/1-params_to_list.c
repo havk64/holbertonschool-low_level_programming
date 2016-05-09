@@ -40,8 +40,7 @@ int add_node(List **list, char *content)
 }
 
 /* ===================================================  *
- * Allocates a new node to a linked list and links it   *
- * to the end of the list.                              *
+ * Creates a new list from the command line arguments	*
  * ===================================================  */
 List *params_to_list(int ac, char **av)
 {
