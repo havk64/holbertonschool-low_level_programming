@@ -1,20 +1,21 @@
 # * =========================================================== *
-# *  Makefile for the Task 0, Linked lists.			*
+# *  Makefile for the Task 0, Project Linked lists.		*
 # *  by Alexandro de Oliveira, for Holberton School.		*
 # * =========================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic -I ../
 SRC	:= main.c 0-add_node.c
 OBJECTS	:= $(SRC:.c=.o)
+TARGET	:= task-0
 
-all: task-0
+all: $(TARGET)
 
-task-0: $(OBJECTS)
-	$(CC) $(OBJECTS) -o task-0
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(TARGET)
 
 $(OBJECTS): $(SRC)
 
 clean:
-	rm -f $(OBJECTS) task-0
+	rm -f $(OBJECTS) $(TARGET)
 
 re: $(OBJECTS)
