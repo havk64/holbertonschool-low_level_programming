@@ -1,7 +1,6 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "header.h"
 
 int print_char(char c);
 void  print(struct stat statFile)
