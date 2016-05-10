@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     int in, out;
     char buffer[BUF_SIZE];
 
-    if(argc < 3 || argc > 3)  /* We need 1 or 2 args.	*/
+    if(argc != 3)  /*	We need exactly 2 arguments.	*/
 	return (1);
 
     src = open(argv[1], O_RDONLY); /* Open the file.	*/
