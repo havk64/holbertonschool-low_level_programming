@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	return (1);
     }
 
-    dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0666);
+    dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if(dest == -1) {
 	close(dest);
 	return (1);
