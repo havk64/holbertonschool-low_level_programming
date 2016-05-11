@@ -1,5 +1,3 @@
-#include <fcntl.h>
-#include <unistd.h>
 #include "header.h"
 
 /* ===========================================================  *
