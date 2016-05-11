@@ -24,10 +24,13 @@ int main(int ac, char *av[])
     
     if(ac > 1) {
 	for(i = 1; i < ac; i++) {
-	    if((fd = open(av[i], O_RDONLY)) == -1) return (1);
+	    if((fd = open(av[i], O_RDONLY)) == -1)
+		return (1);
 	    ret = logIt(fd, bf); /* Gets the return of function */
-	    if((close(fd) == -1) || (ret == 1 )) return (1);
-	}     /* ^^^	   Closing the file(s).			*/
+	    if((close(fd) == -1) || (ret == 1 ))
+	      /* ^^^	   Closing the file(s).			*/
+		return (1);
+	}       
     }
     else	/* if no parameters are given, reads from stdin.*/
 	return logIt(0, bf);
