@@ -4,7 +4,7 @@
 # * =================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic
-SRC	:= main.c 
+SRC	:= main.c print_char.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= 0-print_content
 

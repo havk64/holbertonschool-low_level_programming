@@ -1,14 +1,9 @@
-#include <fcntl.h>
-#include <unistd.h> 
+#include "header.h"
 
 /* ==================================================== *
  *  Task 0 - File Descriptors. Read from a file, prints *
  *  to standard output.					*
  * ====================================================	*/
-int print_char(int c) /* Print Char function.		*/
-{
-    return(write(1, &c, 1));
-}
 
 int main(int argc, char *argv[])
 {
