@@ -9,7 +9,7 @@ int add_node(List **list, char *content)
 {    
     int len, i;
     char *s;
-    List *p, *node;
+    List *actual, *node;
     len = 0;
 
     node = malloc(sizeof(List));
@@ -28,14 +28,10 @@ int add_node(List **list, char *content)
     node->str = s;
     node->next = NULL;
 
-    if(*list == NULL) {
-	*list = node;
-    } else {
-	p = *list;
-	while(p->next != NULL)
-	    p = p->next;
-	p->next = node;
-    }
+    actual = *list;
+    while(actual != NULL && actual->next != NULL)
+	actual = actual->next;
+
     return (0);
 }
 
@@ -51,6 +47,5 @@ List *params_to_list(int ac, char **av)
 	if(add_node(&node, av[i]) == 1 ) return NULL;
 	i++;
     }
-
     return node;
 }
