@@ -27,10 +27,10 @@ void crazy_reverse_string(char *s)
     i = 0;
     while (i < l / 2)
     {
-	s[l] = s[i];
-	s[i] = s[l - i - 1];
-	s[l - i -1 ] = s[l];
-	s[l] = 0;
+	s[l] = s[i];		/* Using the Null terminator as temp variable.	*/
+	s[i] = s[l - i - 1];	/* Assigning the each item to its opposite.	*/
+	s[l - i -1 ] = s[l];	/* Retrieving the saved value from the Null.	*/
+	s[l] = 0;		/* Reassigning the 0 value to last its place.	*/
 	i++;
     }
 }
