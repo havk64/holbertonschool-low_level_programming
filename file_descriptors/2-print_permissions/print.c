@@ -1,16 +1,16 @@
 #include "header.h"
 
 void  print(struct stat statFile)
-{       /* Function to prints each item of permision.           */
-    print_char(S_ISDIR(statFile.st_mode)        ? 'd' : '-');
-    print_char((statFile.st_mode & S_IRUSR)     ? 'r' : '-');
-    print_char((statFile.st_mode & S_IWUSR)     ? 'w' : '-');
-    print_char((statFile.st_mode & S_IXUSR)     ? 'x' : '-');
-    print_char((statFile.st_mode & S_IRGRP)     ? 'r' : '-');
-    print_char((statFile.st_mode & S_IWGRP)     ? 'w' : '-');
-    print_char((statFile.st_mode & S_IXGRP)     ? 'x' : '-');
-    print_char((statFile.st_mode & S_IROTH)     ? 'r' : '-');
-    print_char((statFile.st_mode & S_IWOTH)     ? 'w' : '-');
-    print_char((statFile.st_mode & S_IXOTH)     ? 'x' : '-');
+{  /* Function to prints each item of permision.	      /  FLAGS	 */
+    print_char((statFile.st_mode & 0040000)	? 'd' : '-'); /* S_IFDIR */
+    print_char((statFile.st_mode & 00400)	? 'r' : '-'); /* S_IRUSR */
+    print_char((statFile.st_mode & 00200)	? 'w' : '-'); /* S_IWUSR */
+    print_char((statFile.st_mode & 00100)	? 'x' : '-'); /* S_IXUSR */
+    print_char((statFile.st_mode & 00040)	? 'r' : '-'); /* S_IRGRP */
+    print_char((statFile.st_mode & 00020)	? 'w' : '-'); /* S_IWGRP */
+    print_char((statFile.st_mode & 00010)	? 'x' : '-'); /* S_IXGRP */
+    print_char((statFile.st_mode & 00004)	? 'r' : '-'); /* S_IROTH */
+    print_char((statFile.st_mode & 00002)	? 'w' : '-'); /* S_IWOTH */
+    print_char((statFile.st_mode & 00001)	? 'x' : '-'); /* S_IXOTH */
     print_char('\n');
 }
