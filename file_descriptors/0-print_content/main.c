@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     file = open(argv[1],O_RDONLY); /* Open the file.	*/
     if(file == -1) return (1);
 
-    while(read(file, &c, 1)) /* reading each char. */
+    while(read(file, &c, 1)) /* reading each char.	*/
 	print_char(c);
 
     if(close(file)) return (1); /* Closing the file.	*/
