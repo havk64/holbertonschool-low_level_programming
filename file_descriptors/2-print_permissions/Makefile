@@ -4,7 +4,7 @@
 # * =================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic
-SRC	:= main.c print_char.c
+SRC	:= main.c print_char.c print.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= 2-print_permissions
 
