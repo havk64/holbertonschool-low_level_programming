@@ -1,10 +1,10 @@
 # * =================================================== *
-# *  Makefile for the Task 1, Project File Descriptors.	*
+# *  Makefile for the Task 2, Project File Descriptors.	*
 # *  by Alexandro de Oliveira, for Holberton School.	*
 # * =================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic
-SRC	:= main.c 
+SRC	:= main.c print_char.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= 2-print_permissions
 
