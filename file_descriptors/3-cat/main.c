@@ -20,8 +20,8 @@ int main(int ac, char *av[])
     int i, fd, ret;
     char bf[BUF_SIZE];
     
-    if(ac > 1) {
-	for(i = 1; i < ac; i++) {
+    if(ac > 1) {	/* Accepts multiple arguments.		*/
+	for(i = 1; i < ac; i++) { /*Looping through each param.	*/
 	    if((fd = open(av[i], O_RDONLY)) == -1)
 		return (1);
 	    ret = logIt(fd, bf); /* Gets the return of function */
@@ -35,5 +35,3 @@ int main(int ac, char *av[])
 
     return (0);
 }
-
-	    
