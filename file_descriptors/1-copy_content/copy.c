@@ -1,5 +1,8 @@
 #include "header.h"
 
+/* ==================================================  *
+ * This function copies the content of src to dest.	*
+ * ==================================================	*/
 int copyFile(int src, int dest, char buffer[])
 {
     int in, out;
