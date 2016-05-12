@@ -23,3 +23,4 @@ int len(char *s);
 void prompt(void);
 void print(char *s);
 int welcome();
+int strcomp(char *s1, const char *s2);
