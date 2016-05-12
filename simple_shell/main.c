@@ -7,6 +7,8 @@ int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], cha
     char *command;
     char **argv;
 
+    if(welcome() == 1) return 1;
+
     while(1)
     {
 	prompt();
