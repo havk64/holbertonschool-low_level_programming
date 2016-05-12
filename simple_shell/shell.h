@@ -9,6 +9,7 @@
 #include <signal.h>	/* For signal, kill */
 #include <errno.h>	/* For *sys_errlist[](perror helper) */
 
+#define BUF_SIZE 8192
 #ifndef _LIBSHELL_H_	/* For Static Library */
 #define _LIBSHELL_H_
 
@@ -21,3 +22,4 @@ int print_char(char c);
 int len(char *s);
 void prompt(void);
 void print(char *s);
+int welcome();
