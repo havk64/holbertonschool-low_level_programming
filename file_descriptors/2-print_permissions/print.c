@@ -1,10 +1,10 @@
 #include "header.h"
 
-/* ===========================================================  *
- *  The function prints the permissions of a file using the	*
- *  the st_mode agains each related FLAG.			*
- *  (Using FLAGS instead of POSIX MACROS, commented in front.)	*
- * ===========================================================  */
+/* ====================================================================  *
+ *	The function prints the permissions of a file using the		 *
+ *	the st_mode agains each related FLAG.				 *
+ *	(Using FLAGS instead of POSIX MACROS, commented in front.)	 *
+ * ====================================================================  */
 void  print(struct stat statFile)
 {  /* Printing *.st_mode against bit mask FLAGS		      /  MACROS	 */
     print_char((statFile.st_mode & 0040000)	? 'd' : '-'); /* S_IFDIR */
