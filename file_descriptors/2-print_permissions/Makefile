@@ -8,12 +8,8 @@ SRC	:= main.c print_char.c print.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= 2-print_permissions
 
-all: $(TARGET)
-
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $(TARGET)
-
-$(OBJECTS): $(SRC)
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
