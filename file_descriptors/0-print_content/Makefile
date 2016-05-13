@@ -8,12 +8,8 @@ SRC	:= main.c print_char.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= 0-print_content
 
-all: $(TARGET)
-
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $(TARGET)
-
-$(OBJECTS): $(SRC)
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
