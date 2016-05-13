@@ -8,12 +8,8 @@ SRC	:= main.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= 3-cat
 
-all: $(TARGET)
-
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $(TARGET)
-
-$(OBJECTS): $(SRC)
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
