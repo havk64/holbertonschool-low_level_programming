@@ -1,14 +1,5 @@
 #include "shell.h"
 
-int len(char *s)
-{
-    int i = 0;
-
-    while(s[i])
-	i++;
-
-    return i;
-}
 
 void print(char *s)
 {
@@ -26,7 +17,7 @@ int welcome()
     char text[BUF_SIZE];
 
     system("clear");
-    if((fd = open("welcome.c", O_RDONLY)) == -1)
+    if((fd = open("welcome.msg", O_RDONLY)) == -1)
 	return (1);
 
     while((in = read(fd, text, BUF_SIZE)))
