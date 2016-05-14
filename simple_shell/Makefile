@@ -4,7 +4,7 @@
 # * =================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic
-SRC	:= main.c print.c strings.c print_char.c
+SRC	:= SRC/main.c SRC/print.c SRC/strings.c SRC/print_char.c
 OBJECTS	:= $(SRC:.c=.o)
 TARGET	:= shellisfun
 LIB	:= libshell.a
