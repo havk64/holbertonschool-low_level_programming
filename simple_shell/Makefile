@@ -3,14 +3,17 @@
 # *  by Alexandro de Oliveira, for Holberton School.	*
 # * =================================================== *
 CC	:= gcc
-CFLAGS	:= -Wall -Wextra -Werror -pedantic
-SRC	:= SRC/main.c SRC/print.c SRC/strings.c SRC/print_char.c
-OBJECTS	:= $(SRC:.c=.o)
-TARGET	:= shellisfun
-LIB	:= libshell.a
+CFLAGS	:= -Wall -Wextra -Werror -pedantic -I inc
+SRC	:= $(wildcard src/*.c)
+OBJECTS	:= $(patsubst src/%, build/%, $(SRC:.c=.o))
+TARGET	:= bin/shellisfun
+LIB	:= lib/libshell.a
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) $(LIB) -o $(TARGET)
+
+build/%.o : src/%.c
+	$(CC) -c $(CFLAGS) $^ -o $@
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
