@@ -70,15 +70,3 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
-/*
-    int i, fd;
-    struct stat st;
-
-    st = malloc(sizeof(struct stat));
-    fd = open(av[1], O_RDONLY);
-    i = fstat(fd, &st);
-    printf("This file has %zu bytes\n", st.st_size);
-    printf("Variable 'i' is: %d\n", i);
-*/
-	/*return 0;*/
-
