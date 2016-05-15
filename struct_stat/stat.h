@@ -8,3 +8,4 @@
 #include <unistd.h>
 
 int print(char * argv, struct stat * stat );
+void report( char * name, struct stat * buffer);
