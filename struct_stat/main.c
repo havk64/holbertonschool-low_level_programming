@@ -7,8 +7,10 @@
 #include <pwd.h>
 #include <unistd.h>
 
-char * accesses[] = {"...", "..x", ".w.", ".wx", "r..", "r.x", "rw.", "rwx"}
-;
+char * accesses[] = {"...", "..x", ".w.", ".wx", "r..", "r.x", "rw.", "rwx"};
+
+int print(char * argv, struct stat * stat );
+
 void report( char * name, struct stat * buffer)
 /* Decode and present the status information. */
 {
@@ -46,8 +48,7 @@ int main(int argc, char *argv[])
 /* Print status of files on argument list. */
     {
 	struct stat status_buf;
-	int fd;
-	char *p;
+
 	if (argc < 2)
 	{
 	    fprintf(stderr, "statfile file1 ...\n");
@@ -59,14 +60,29 @@ int main(int argc, char *argv[])
 		perror(*argv);
 	    else {
 		report(*argv, &status_buf);
-		fd = open( *argv, O_RDONLY);
-		p = malloc(sizeof(char) * status_buf.st_size + 1);
-		read( fd, p, status_buf.st_size); 
-		write(1, p, status_buf.st_size );
-		free(p);
-		close(fd);
+		if((print(*argv, &status_buf) == 0))
+		   return 0;
 	    }
 	}
     }
     return 0;
+}
+
+int print(char * argv, struct stat * stat )
+{
+    int fd;
+    char *p;
+
+    if((fd = open(argv, O_RDONLY)) == -1)
+	return 1;
+
+    if((p = malloc(sizeof(char) * stat -> st_size + 1)) == NULL)
+	return 1;
+    
+    read(fd, p, stat -> st_size);
+    write(1, p, stat -> st_size);
+    free(p);
+    close(fd);
+
+    return (0);
 }
