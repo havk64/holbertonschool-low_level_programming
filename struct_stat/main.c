@@ -1,15 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <time.h>
-#include <pwd.h>
-#include <unistd.h>
+#include "stat.h"
 
-char * accesses[] = {"...", "..x", ".w.", ".wx", "r..", "r.x", "rw.", "rwx"};
-
-int print(char * argv, struct stat * stat );
+char * accesses[] = {"---", "--x", "-w-", "-wx", "r--", "r-x", "rw-", "rwx"};
 
 void report( char * name, struct stat * buffer)
 /* Decode and present the status information. */
