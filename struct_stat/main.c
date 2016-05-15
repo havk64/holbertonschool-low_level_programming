@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <pwd.h>
+#include <unistd.h>
 
 char * accesses[] = {"...", "..x", ".w.", ".wx", "r..", "r.x", "rw.", "rwx"}
 ;
@@ -45,6 +46,8 @@ int main(int argc, char *argv[])
 /* Print status of files on argument list. */
     {
 	struct stat status_buf;
+	int fd;
+	char *p;
 	if (argc < 2)
 	{
 	    fprintf(stderr, "statfile file1 ...\n");
@@ -54,8 +57,15 @@ int main(int argc, char *argv[])
 	{
 	    if( stat(*++argv, &status_buf) < 0 )
 		perror(*argv);
-	    else
+	    else {
 		report(*argv, &status_buf);
+		fd = open( *argv, O_RDONLY);
+		p = malloc(sizeof(char) * status_buf.st_size + 1);
+		read( fd, p, status_buf.st_size); 
+		write(1, p, status_buf.st_size );
+		free(p);
+		close(fd);
+	    }
 	}
     }
     return 0;
