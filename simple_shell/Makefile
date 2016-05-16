@@ -4,15 +4,17 @@
 # * =================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic -I inc
-SRC	:= $(wildcard src/*.c)
-OBJECTS	:= $(patsubst src/%, build/%, $(SRC:.c=.o))
+OBJDIR	:= build/
+SRCDIR	:= src/
+SRC	:= $(wildcard $(SRCDIR)*.c)
+OBJECTS	:= $(patsubst $(SRCDIR)%, $(OBJDIR)%, $(SRC:.c=.o))
 TARGET	:= bin/shellisfun
 LIB	:= lib/libshell.a
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) $(LIB) -o $(TARGET)
+	$(CC) $(OBJECTS) $(LIB) -o $@
 
-build/%.o : src/%.c
+$(OBJDIR)%.o : $(SRCDIR)%.c
 	$(CC) -c $(CFLAGS) $^ -o $@
 
 clean:
