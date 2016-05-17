@@ -17,7 +17,7 @@ int welcome()
     char text[BUF_SIZE];
 
     system("clear");
-    if((fd = open("extra/welcome.new", O_RDONLY)) == -1)
+    if((fd = open("extra/welcome.msg", O_RDONLY)) == -1)
 	return (1);
 
     while((in = read(fd, text, BUF_SIZE)))
@@ -25,3 +25,4 @@ int welcome()
 
     return (0);
 }
+
