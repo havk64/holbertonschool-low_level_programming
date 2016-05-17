@@ -10,6 +10,7 @@
 #include <errno.h>	/* For *sys_errlist[](perror helper) */
 
 #define BUF_SIZE 8192
+
 #ifndef _LIBSHELL_H_	/* For Static Library */
 #define _LIBSHELL_H_
 
@@ -24,4 +25,8 @@ void prompt(void);
 void print(char *s);
 int welcome();
 int strcomp(char *s1, const char *s2);
-
+int runIt(char * c, char * argv[], char *ep[]);
+int checkIt(char * argv[], char *ep[]);
+int cd(char *argv[]);
+int out(char *argv[]);
+int help(char *argv[]);
