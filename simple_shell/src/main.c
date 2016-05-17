@@ -1,25 +1,28 @@
 #include "shell.h"
 
+/*
+ * Simple shell Project.
+ */
 int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], char *ep[])
 {
-    pid_t pid;
-    int status;
+    int bool;
     char *command;
     char **argv;
 
     if(welcome() == 1) return 1;
 
-    while(1)
+    do
     {
 	prompt();
 	command = read_line(0);
 	argv = string_split(command, ' ');
-	pid = fork();
+	bool = checkIt(argv, ep);
 
-	if(pid == 0)
-	    execve(argv[0], argv, ep);
-	else
-	    wait(&status);
-    }
+	free(command);
+	free(argv);
+
+    } while(bool);
+    
     return (0);
 }
+
