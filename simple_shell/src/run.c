@@ -32,11 +32,17 @@ int cd(char *argv[])
     return 1;
 }
 
+/*
+ * Function to exit.
+ */
 int out(char __attribute__((unused)) *a[])
 {
     return 0;
 }
 
+/*
+ * Check each command before call the child process.
+ */
 int checkIt(char * argv[], char __attribute__((unused)) *ep[])
 {
     int i;
@@ -58,6 +64,9 @@ int checkIt(char * argv[], char __attribute__((unused)) *ep[])
     return runIt(argv[0], argv, ep);
 }
 
+/*
+ * Calling child process.
+ */
 int runIt(char * command, char * argv[], char *ep[])
 {
     pid_t pid;
