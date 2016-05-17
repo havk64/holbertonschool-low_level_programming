@@ -30,11 +30,11 @@
               ,::::::::::::::::::::              ::,,  , ,,  ,::::
                  ,::::::::::::::::              ::,, ,   ,:::,
                       ,::::                         , ,,
-                                                  ,,,
-Available commands:
-	
-
-
-
-
+Available commands:                               ,,,
+  ls    := You know it! ;-)
+  cd    := You know it too! >:-)
+  help  := Prints this welcome message and usage tips.
+  env   := Prints all environment variables.
+  emacs := Yes, we have emacs \o/ !!!
+  pstree:= Show directory structure.
 
