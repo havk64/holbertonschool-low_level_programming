@@ -3,8 +3,8 @@
 /*
  *Defining available binaries and builtin commands.
  */
-char * commands[] = { "ls", "pwd", "emacs", "pstree", "cat", "echo", NULL };
-char * replace[] = { "/bin/ls","/bin/pwd", "/usr/bin/emacs", "/usr/bin/pstree", "/bin/cat", "/bin/echo", NULL };
+char * commands[] = { "ls", "pwd", "emacs", "pstree", "cat", "echo", "env", NULL };
+char * replace[] = { "/bin/ls","/bin/pwd", "/usr/bin/emacs", "/usr/bin/pstree", "/bin/cat", "/bin/echo", "/usr/bin/env", NULL };
 char * builtins[] = { "help", "cd", "exit", NULL };
 int (* functions[]) (char **) = { &help, &cd, &out, NULL };
 
@@ -56,7 +56,7 @@ int checkIt(char * argv[], char __attribute__((unused)) *ep[])
 	    return (*functions[i])(argv);
 	}
     }
-    for(i = 0; i < 6; i++) {
+    for(i = 0; i < 7; i++) {
 	if(strcomp(argv[0], commands[i]) == 0) {
 	    return runIt(replace[i], argv, ep);
 	}
