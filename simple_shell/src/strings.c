@@ -40,29 +40,3 @@ int len(char *s)
 
     return i;
 }
-
-/*
- * Implementation of read_line()
- *
-char *read_line(void)
-{
-    char *buff; 
-    int i = 0;
-    int c;
-
-    if((buff =  malloc(sizeof(char) * BUF_SIZE + 1))) {
-	perror("Allocation failed!");
-	return 1;
-    }
-
-    c = getchar();
-
-    if(c == EOF || c == '\n') {
-	buff[i] = 0;
-	return buff;
-    } else 
-	buff[i] = c;
-    
-    i++;
-}
-*/
