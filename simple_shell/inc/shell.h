@@ -31,4 +31,5 @@ int checkIt(char * argv[], char *ep[]);
 int cd(char *argv[]);
 int out(char *argv[]);
 int help(char *argv[]);
-int *getPath(char ** env);
+char *getPath(char ** env);
+
