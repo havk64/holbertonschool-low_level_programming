@@ -11,12 +11,12 @@ int parseIt(char * env[])
     
     p1 = malloc(sizeof(char) * l + 1);
     if(p1 == NULL) return 1;
-    strcpy(p1, p);
-    path = string_split(p2, ':');
+    string_copy(p1, p);
+    path = string_split(p1, ':');
     
+    free(p1);
     freeMem(path);
     free(path);
-    free(p1);
 
     return (0);
 }
