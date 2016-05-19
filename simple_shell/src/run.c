@@ -44,7 +44,7 @@ int out(char *a[])
 /*
  * Check each command before call the child process.
  */
-int checkIt(char * argv[], char __attribute__((unused)) *ep[])
+int checkIt(char * argv[], char __attribute__((unused)) * ep[])
 {
     int i;
 
@@ -68,7 +68,7 @@ int checkIt(char * argv[], char __attribute__((unused)) *ep[])
 /*
  * Calling child process.
  */
-int runIt(char * command, char * argv[], char *ep[])
+int runIt(char * command, char * argv[], char * ep[])
 {
     pid_t pid;
     int status;

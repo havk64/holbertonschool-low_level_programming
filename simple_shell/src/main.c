@@ -11,17 +11,17 @@ int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], cha
 
     if(welcome() == 1) return 1;
 
-    do
-    {
+    do {
 	prompt();
 	command = read_line(0);
 	argv = string_split(command, ' ');
 	bool = checkIt(argv, ep);
 
-	free(command);
 	free(argv);
+	free(command);
 
     } while(bool);
+
     
     return (0);
 }
