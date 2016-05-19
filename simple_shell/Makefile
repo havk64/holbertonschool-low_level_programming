@@ -1,7 +1,7 @@
-# * =================================================== *
-# *  Makefile for the Task 0, Project ❝Simple Shell❞
-# *  by Alexandro de Oliveira, for Holberton School.	*
-# * =================================================== *
+# * =========================================================== *
+# *  Makefile for Project ❝Simple Shell❞ without std libraries	*
+# *  by Alexandro de Oliveira, for Holberton School.		*
+# * =========================================================== *
 CC	:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -pedantic -I inc
 OBJDIR	:= build/
