@@ -21,6 +21,34 @@ int parseIt(char * env[])
     return (0);
 }
 
+char *commandExist(char * cmd, char ** env)
+{
+    int i;
+    char * path, *command;
+    char ** paths;
+    struct stat st;
+
+    if((command = malloc(sizeof(char) * BUF )) == NULL)
+	return NULL;
+
+    path = getEnv("PATH", env);
+    paths = string_split(path, ':');
+
+    for( i = 0; paths[i] != 0; i++) {
+        strncpy(command, paths[i], len(paths[i]) + 1);
+        strcat(command, "/");
+        strcat(command, cmd);
+        printf("Inside for: %s\n", command);
+        if(stat(command, &st) == 0)
+            return command;
+        else
+            free(command);
+    }
+    freeMem(paths);
+    free(paths);
+    return NULL;
+}
+
 /* 
  * Function getEnv returns a pointer to the value of a env variable.
  */

@@ -55,6 +55,9 @@ char *string_copy(char *dest, const char *src)
     return s;
 }
 
+/*
+ * Implementation of strncpy.
+ */
 char *string_ncopy(char *dest, const char *src, int n)
 {
     char *s;
@@ -63,5 +66,21 @@ char *string_ncopy(char *dest, const char *src, int n)
         n--;                        /* expression are != 0  */
     while(n--)
         *dest++ = 0;
+    return s;
+}
+
+/* 
+ * Implementation of strncat().  Used to concatenate two strings.*
+ */
+char *nconcat_strings(char *dest, const char *src, int n)
+{
+    char *s;
+    s = dest;
+
+    while( *dest )
+        dest++;
+    while( *src && n-- )
+        *dest++ = *src++;
+    *dest = 0;
     return s;
 }
