@@ -54,3 +54,14 @@ char *string_copy(char *dest, const char *src)
 
     return s;
 }
+
+char *string_ncopy(char *dest, const char *src, int n)
+{
+    char *s;
+    s = dest;
+    while(n && (*dest++ = *src++) ) /* while n and second   */
+        n--;                        /* expression are != 0  */
+    while(n--)
+        *dest++ = 0;
+    return s;
+}
