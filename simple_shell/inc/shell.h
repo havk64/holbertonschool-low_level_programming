@@ -9,7 +9,9 @@
 #include <signal.h>	/* For signal, kill */
 #include <errno.h>	/* For *sys_errlist[](perror helper) */
 
+#include <string.h>	/* For strncat, strcat, etc */
 #define BUF_SIZE 8192
+#define BUF 16
 
 #ifndef _LIBSHELL_H_	/* For Static Library */
 #define _LIBSHELL_H_
@@ -31,6 +33,10 @@ int checkIt(char * argv[], char *ep[]);
 int cd(char *argv[]);
 int out(char *argv[]);
 int help(char *argv[]);
-char *getPath(char ** env);
 char *getEnv(char * name, char ** env);
 void freeMem(char *a[]);
+int parseIt( char * env[]);
+char *string_copy(char *dest, const char *src);
+char *string_ncopy(char *dest, const char *src, int n);
+char *nconcat_strings(char *dest, const char *src, int n);
+char *commandExist(char * cmd, char ** env);
