@@ -35,9 +35,9 @@ char *commandExist(char * cmd, char ** env)
     paths = string_split(path, ':');
 
     for( i = 0; paths[i] != 0; i++) {
-        strncpy(command, paths[i], len(paths[i]) + 1);
-        strcat(command, "/");
-        strcat(command, cmd);
+        string_ncopy(command, paths[i], len(paths[i]) + 1);
+        nconcat_strings(command, "/", 1);
+        nconcat_strings(command, cmd, len(cmd) + 1);
         printf("Inside for: %s\n", command);
         if(stat(command, &st) == 0)
             return command;
