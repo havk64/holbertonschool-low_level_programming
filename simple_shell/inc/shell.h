@@ -32,4 +32,5 @@ int cd(char *argv[]);
 int out(char *argv[]);
 int help(char *argv[]);
 char *getPath(char ** env);
-
+char *getEnv(char * name, char ** env);
+void freeMem(char *a[]);
