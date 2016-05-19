@@ -35,8 +35,9 @@ int cd(char *argv[])
 /*
  * Function to exit.
  */
-int out(char __attribute__((unused)) *a[])
+int out(char *a[])
 {
+    freeMem(a);
     return 0;
 }
 
@@ -78,12 +79,20 @@ int runIt(char * command, char * argv[], char *ep[])
     if(pid == 0) {
 	if(execve(command, argv, ep) == -1)
 	    perror("Execve error...");
+
 	exit(EXIT_FAILURE);
 	return (1);
     }
     else {
 	wait(&status);
+	freeMem(argv);
     }
     return (1);
 }
 
+void freeMem(char *a[])
+{
+    int i;
+    for(i = 0; a[i]; i++)
+	free(a[i]);
+}
