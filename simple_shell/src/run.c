@@ -3,8 +3,6 @@
 /*
  *Defining available  builtin commands.
  */
-char * builtins[] = { "help", "cd", "exit", NULL };
-int (* functions[]) (char **) = { &help, &cd, &out, NULL };
 
 
 
@@ -22,13 +20,12 @@ int help(char __attribute__((unused)) *argv[])
  */
 int cd(char *argv[])
 {
-    if (argv[1] == NULL) {
-	fprintf(stderr, "Enter at least one argument\n");
-    } else {
-	if (chdir(argv[1]) != 0) {
+    if (argv[1] == NULL) 
+	perror("Enter at least one argument\n");
+    else 
+	if (chdir(argv[1]) != 0) 
 	    perror("Wrong Usage!");
-	}
-    }
+	
     return 1;
 }
 
@@ -46,6 +43,9 @@ int out(char __attribute((unused)) *a[])
 int checkIt(char * argv[], char  * ep[])
 {
     int i;
+    char * builtins[] = { "help", "cd", "exit", NULL };
+    int (* functions[]) (char **) = { &help, &cd, &out, NULL };
+
 
     if(argv[0] == NULL) 
 	return (1);
@@ -72,6 +72,7 @@ int runIt(char * command, char * argv[], char * ep[])
     if(pid < 0) perror("Ops...!");
 	
     if(pid == 0) {
+
 	execve(command, argv, ep);
 		
 	if(execve(cmd, argv, ep) == -1)
@@ -87,6 +88,9 @@ int runIt(char * command, char * argv[], char * ep[])
     return (1);
 }
 
+/*
+ * freeMem is used to free a vector(array) of strings.
+ */
 void freeMem(char ** a)
 {
     int i;
