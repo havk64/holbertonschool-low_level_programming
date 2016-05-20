@@ -9,9 +9,8 @@
 #include <signal.h>	/* For signal, kill */
 #include <errno.h>	/* For *sys_errlist[](perror helper) */
 
-#include <string.h>	/* For strncat, strcat, etc */
 #define BUF_SIZE 8192
-#define BUF 16
+#define BUF 32
 
 #ifndef _LIBSHELL_H_	/* For Static Library */
 #define _LIBSHELL_H_

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /*
- *Defining available binaries and builtin commands.
+ *Defining available  builtin commands.
  */
-char * commands[] = { "ls", "pwd", "emacs", "pstree", "cat", "echo", "env", NULL };
-char * replace[] = { "/bin/ls","/bin/pwd", "/usr/bin/emacs", "/usr/bin/pstree", "/bin/cat", "/bin/echo", "/usr/bin/env", NULL };
 char * builtins[] = { "help", "cd", "exit", NULL };
 int (* functions[]) (char **) = { &help, &cd, &out, NULL };
+
+
 
 /*
  * Show the welcome/help message.
@@ -44,41 +44,39 @@ int out(char *a[])
 /*
  * Check each command before call the child process.
  */
-int checkIt(char * argv[], char __attribute__((unused)) * ep[])
+int checkIt(char * argv[], char  * ep[])
 {
     int i;
 
-    if(argv[0] == NULL) {
+    if(argv[0] == NULL) 
 	return (1);
-    }
 
-    for(i = 0; i < 3; i++) {
-	if(strcomp(argv[0], builtins[i]) == 0) {
+    for(i = 0; i < 3; i++) 
+	if(strcomp(argv[0], builtins[i]) == 0) 
 	    return (*functions[i])(argv);
-	}
-    }
-    for(i = 0; i < 7; i++) {
-	if(strcomp(argv[0], commands[i]) == 0) {
-	    return runIt(replace[i], argv, ep);
-	}
-    }
+    
     return runIt(argv[0], argv, ep);
 }
 
 /*
- * Calling child process.
+ * Calling child process to execution.
  */
 int runIt(char * command, char * argv[], char * ep[])
 {
     pid_t pid;
     int status;
+    char * cmd;
+
+    cmd = commandExist(command, ep);
 
     pid = fork();
     if(pid < 0) perror("Ops...!");
 	
     if(pid == 0) {
-	if(execve(command, argv, ep) == -1)
-	    perror("Execve error...");
+	execve(command, argv, ep);
+		
+	if(execve(cmd, argv, ep) == -1)
+	    perror("Command not found...");
 
 	exit(EXIT_FAILURE);
 	return (1);
@@ -86,6 +84,7 @@ int runIt(char * command, char * argv[], char * ep[])
     else {
 	wait(&status);
 	freeMem(argv);
+	free(cmd);
     }
     return (1);
 }
