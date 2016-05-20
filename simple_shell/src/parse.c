@@ -41,12 +41,10 @@ char *commandExist(char * cmd, char ** env)
 
         if(stat(command, &st) == 0) {
 	    freeMem(paths);
-	    free(paths);
             return command;
 	}        
     }
     freeMem(paths);
-    free(paths);
     return command;
 }
 
