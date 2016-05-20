@@ -21,7 +21,6 @@ int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], cha
 	free(command);
 
     } while(bool);
-
     
     return (0);
 }

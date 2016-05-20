@@ -38,7 +38,7 @@ char *commandExist(char * cmd, char ** env)
         string_ncopy(command, paths[i], (len(paths[i]) + 1));
         nconcat_strings(command, "/", 2);
         nconcat_strings(command, cmd, len(cmd) + 1);
-        printf("Inside for: %s\n", command);
+
         if(stat(command, &st) == 0) {
 	    freeMem(paths);
 	    free(paths);
