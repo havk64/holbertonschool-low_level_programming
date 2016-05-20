@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 int string_len(char *s)
 {
@@ -43,5 +44,8 @@ int main(void)
     printf("Before: %s\n", s);
     crazy_reverse_string(s);
     printf("After: %s\n", s);
+    printf("\nStarts here:");
+    write(1, "Hello World!", (1 << 3) + (1 << 2));
+    printf("\n");
     return (0);
 }

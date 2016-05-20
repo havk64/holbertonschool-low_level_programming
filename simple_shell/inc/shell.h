@@ -10,7 +10,7 @@
 #include <errno.h>	/* For *sys_errlist[](perror helper) */
 
 #define BUF_SIZE 8192
-#define BUF 32
+#define BUF 64
 
 #ifndef _LIBSHELL_H_	/* For Static Library */
 #define _LIBSHELL_H_

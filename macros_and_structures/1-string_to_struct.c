@@ -10,6 +10,7 @@ struct String *string_to_struct(char *str)
     int i, len;
     char *s;
     struct String *p;		       /* Creating pointer to struct.	*/
+
     p = malloc(sizeof(struct String)); /* Allocating memory to pointer	*/
     
     len = 0;

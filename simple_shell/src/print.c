@@ -25,4 +25,3 @@ int welcome()
 
     return (0);
 }
-

@@ -28,7 +28,7 @@ char *commandExist(char * cmd, char ** env)
     char ** paths;
     struct stat st;
 
-    if((command = malloc(sizeof(char) * 32 )) == NULL)
+    if((command = malloc(sizeof(char) * BUF )) == NULL)
 	return NULL;
 
     path = getEnv("PATH", env);

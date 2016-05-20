@@ -7,7 +7,7 @@
 int logIt(int fd, char bf[])
 {			/* Separate function to print to stdout */
     int in, out;
-    
+
     while((in = read(fd, bf, BUF_SIZE))) { /* Reads 8192 bits.	*/
 	out = write(1, bf, in); /*	Writes what it reads.	*/
 	if(out != in) return (1);
