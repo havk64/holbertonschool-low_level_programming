@@ -1,26 +1,9 @@
 #include "shell.h"
 
-int parseIt(char * env[])
-{
-    int l;
-    char *p, *p1;
-    char ** path;
-    
-    p = getEnv("PATH", env);
-    l = len(p);
-    
-    p1 = malloc(sizeof(char) * l + 1);
-    if(p1 == NULL) return 1;
-    string_copy(p1, p);
-    path = string_split(p1, ':');
-    
-    free(p1);
-    freeMem(path);
-    free(path);
-
-    return (0);
-}
-
+/*
+ * commandExist searchs in the PATH for each command(argv[0])
+ * typed in the command line and returns it, if available.
+ */
 char *commandExist(char * cmd, char ** env)
 {
     int i;
@@ -50,6 +33,7 @@ char *commandExist(char * cmd, char ** env)
 
 /* 
  * Function getEnv returns a pointer to the value of a env variable.
+ * it's similar to the function getenv().
  */
 char *getEnv(char * name, char ** env)
 {

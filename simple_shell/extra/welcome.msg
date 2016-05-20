@@ -14,7 +14,7 @@
  :::::::::::,                                                     ,::::::::::::
 :::::::::::::                                                     ,::::::::::::
 ::::::::::::                     Simple Shell                      ::::::::::::
-::::::::::::                   (version 0.0.1)                    ,::::::::::::
+::::::::::::                   (version 0.1.1)                    ,::::::::::::
 :::::::::::,                                                      , :::::::::::
 ,:::::::::::::,            by Alexandro de Oliveira              ,,::::::::::::
 ::::::::::::::                                                    ,::::::::::::
@@ -29,12 +29,10 @@
           :::::::::::::::::::::::,               ::,: ::,::, ,,: ::::
               ,::::::::::::::::::::              ::,,  , ,,  ,::::
                  ,::::::::::::::::              ::,, ,   ,:::,
-                      ,::::                         , ,,
+                       ,::::                         , ,,
 Available commands:                               ,,,
-  ls    := You know it! ;-)
-  cd    := You know it too! >:-)
-  help  := Prints this welcome message and usage tips.
-  env   := Prints all environment variables.
-  emacs := Yes, we have emacs \o/ !!!
-  pstree:= Show directory structure.
+>	  help  := Prints this welcome message.
+> 	  *	:= Every binary you have in your PATH.
+  
+  Enjoy it! \o/ 
 
