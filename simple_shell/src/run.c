@@ -1,12 +1,6 @@
 #include "shell.h"
 
 /*
- *Defining available  builtin commands.
- */
-
-
-
-/*
  * Show the welcome/help message.
  */
 int help(char __attribute__((unused)) *argv[])
@@ -66,24 +60,26 @@ int runIt(char * command, char * argv[], char * ep[])
     int status;
     char * cmd;
 
-    cmd = commandExist(command, ep);
-
     pid = fork();
     if(pid < 0) perror("Ops...!");
 	
     if(pid == 0) {
 
 	execve(command, argv, ep);
-		
-	if(execve(cmd, argv, ep) == -1)
-	    perror("Command not found...");
 
+	cmd = commandExist(command, ep);
+		
+	if(execve(cmd, argv, ep) == -1) {
+	    free(cmd);
+	    perror("Command not found...");
+	} else {
+	    free(cmd);
+	}
 	exit(EXIT_FAILURE);
 	return (1);
     }
     else {
 	wait(&status);
-	free(cmd);
     }
     return (1);
 }
