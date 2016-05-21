@@ -6,28 +6,30 @@
  */
 char *commandExist(char * cmd, char ** env)
 {
-    int i;
-    char * path, *command;
-    char ** paths;
-    struct stat st;
-
-    if((command = malloc(sizeof(char) * BUF )) == NULL)
-	return NULL;
+    int i, l;
+    char * path;
+    char * command;
+    char ** sPath;
 
     path = getEnv("PATH", env);
-    paths = string_split(path, ':');
+    sPath = string_split(path, ':');
 
-    for( i = 0; paths[i] != 0; i++) {
-        string_ncopy(command, paths[i], (len(paths[i]) + 1));
-        nconcat_strings(command, "/", 2);
-        nconcat_strings(command, cmd, len(cmd) + 1);
+    for( l = 0; sPath[l] != 0; l++);
+    for(i = 0; i < l; i++) {
+	printf("Searching here: -> %s\n", sPath[i]);
+        command = string_concat(sPath[i], cmd);
 
-        if(stat(command, &st) == 0) {
-	    freeMem(paths);
+	if(access(command, X_OK) != -1) {
+            printf("Executable found! = -> %s\n", command);
+            freeMem(sPath);
             return command;
-	}        
+	} else {
+            if( i < (l - 1) )
+		free(command);
+	}
     }
-    freeMem(paths);
+    printf("Command not found!\n");
+    freeMem(sPath);
     return command;
 }
 
