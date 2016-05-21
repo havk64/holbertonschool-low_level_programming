@@ -1,28 +1,33 @@
 #include "shell.h"
+
 /*
  *      This function concatenate two strings allocating
- *	enough space, and returns its pointer.
- */ 
-     char *string_concat(char *s1, char *s2)
- {
-     int i = 0;
-     char *s;
-     int sum = len(s1) + len(s2);
-     s = malloc(sizeof(char) * (sum + 1 ));
-     if(s != NULL) {
-	 while(i < len(s1)) {
-	     s[i] = s1[i];
-	     i++;
-	 }
-	 while(i < sum) {
-	     s[i] = s2[i - len(s1)];
-	     i++;
-	 }
-	 s[i] = 0;
-	 return s;
-     }
-     return NULL;
- }
+ *      enough space and returns its pointer.
+ *	(Modifyed version to add the '/' in between)
+ */
+char *string_concat(char *s1, char *s2)
+{
+    int i = 0;
+    char *s;
+    int sum = len(s1) + len(s2) + 1;
+
+    s = malloc(sizeof(char) * (sum + 1 ));
+    if(s != NULL) {
+        while(i < len(s1)) {
+            s[i] = s1[i];
+            i++;
+        }
+        s[i] = '/';
+	i++;
+	while(i < sum ) {
+            s[i] = s2[i - len(s1) - 1];
+            i++;
+	}
+        s[i] = 0;
+        return s;
+    }
+    return NULL;
+}
 
 /*
  *  Implementation of strncmp() 

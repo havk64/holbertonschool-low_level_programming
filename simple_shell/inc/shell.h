@@ -39,3 +39,5 @@ char *string_copy(char *dest, const char *src);
 char *string_ncopy(char *dest, const char *src, int n);
 char *nconcat_strings(char *dest, const char *src, int n);
 char *commandExist(char * cmd, char ** env);
+char *string_concat(char *s1, char *s2);
+
