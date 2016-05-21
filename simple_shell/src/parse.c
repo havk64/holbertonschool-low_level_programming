@@ -16,11 +16,9 @@ char *commandExist(char * cmd, char ** env)
 
     for( l = 0; sPath[l] != 0; l++);
     for(i = 0; i < l; i++) {
-	printf("Searching here: -> %s\n", sPath[i]);
         command = string_concat(sPath[i], cmd);
 
 	if(access(command, X_OK) != -1) {
-            printf("Executable found! = -> %s\n", command);
             freeMem(sPath);
             return command;
 	} else {
@@ -28,7 +26,6 @@ char *commandExist(char * cmd, char ** env)
 		free(command);
 	}
     }
-    printf("Command not found!\n");
     freeMem(sPath);
     return command;
 }
