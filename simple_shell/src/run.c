@@ -58,7 +58,7 @@ int checkIt(char * argv[], char  * ep[])
 int runIt(char * command, char * argv[], char * ep[])
 {
     pid_t pid;
-    int status;
+    int status, ex;
     char * cmd;
 
     pid = fork();
@@ -80,7 +80,11 @@ int runIt(char * command, char * argv[], char * ep[])
 	return (1);
     }
     else {
-	wait(&status);
+	waitpid(pid, &status, WUNTRACED);
+	if(WIFEXITED(status)) {
+	    ex =  WEXITSTATUS(status);
+	    (void)ex;
+	}
 	freeMem(argv);
     }
     return (1);
