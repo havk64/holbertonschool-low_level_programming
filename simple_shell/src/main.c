@@ -17,7 +17,6 @@ int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], cha
 	argv = string_split(command, ' ');
 	bool = checkIt(argv, ep);
 
-	freeMem(argv);
 	free(command);
 
     } while(bool);

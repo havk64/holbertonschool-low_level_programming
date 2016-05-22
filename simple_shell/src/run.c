@@ -28,6 +28,7 @@ int cd(char *argv[])
  */
 int out(char __attribute((unused)) *a[])
 {
+    freeMem(a);
     return 0;
 }
 
@@ -80,6 +81,7 @@ int runIt(char * command, char * argv[], char * ep[])
     }
     else {
 	wait(&status);
+	freeMem(argv);
     }
     return (1);
 }
