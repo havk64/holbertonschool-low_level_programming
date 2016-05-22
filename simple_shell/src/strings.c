@@ -18,11 +18,9 @@ char *string_concat(char *s1, char *s2)
             i++;
         }
         s[i] = '/';
-	i++;
-	while(i < sum ) {
+	while(++i < sum ) 
             s[i] = s2[i - len(s1) - 1];
-            i++;
-	}
+	
         s[i] = 0;
         return s;
     }
