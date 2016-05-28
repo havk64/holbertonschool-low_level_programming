@@ -14,6 +14,11 @@ int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], cha
     do {
 	prompt();
 	command = read_line(0);
+	if(command == NULL) {
+	    print("\n");
+	    return (0);
+	}
+
 	argv = string_split(command, ' ');
 	bool = checkIt(argv, ep);
 
