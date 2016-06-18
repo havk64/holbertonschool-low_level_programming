@@ -20,6 +20,10 @@ int main(int __attribute__((unused)) ac, char __attribute__((unused)) *av[], cha
 	}
 
 	argv = string_split(command, ' ');
+	if(argv == NULL) {
+		print("\n");
+		return(1);
+	}
 	bool = checkIt(argv, ep);
 
 	free(command);
