@@ -31,12 +31,13 @@ $(OBJECTS):$(SRC)
 
 clean: 
 	@echo " * ============================================================== *"
-	@echo " * 		Removing object files				 *"
+	@echo " * 		Removing object and backup file			 *"
 	@rm -f $(OBJECTS)
+	@rm -f *~
 	@echo " * 		Directory $(SOURCE) is clean now!		 *"
 	@echo " * ============================================================== *"
 
-re: $(OBJECTS)
+re: clean all 
 	@echo " * ============================================================== *"
 	@echo " * 		Applying the "re" rule.				 *"
 	@echo " * ============================================================== *"
