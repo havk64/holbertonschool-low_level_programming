@@ -19,5 +19,6 @@ $(OBJDIR)%.o : $(SRCDIR)%.c
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
+	rm -f *~
 
-re: $(OBJECTS)
+re: clean $(TARGET)
