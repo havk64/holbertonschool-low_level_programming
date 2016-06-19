@@ -11,7 +11,7 @@
 # ===-----------------------------------------------------------===
 
 CC	:= gcc
-FLAGS	:= -Wall -pedantic -Werror -Wextra -I inc
+CFLAGS	:= -Wall -pedantic -Werror -Wextra -I inc
 SRC	:= $(shell find src/ -name '*.c')
 OBJS	:= $(SRC:.c=.o)
 TARGET	:= bin/cross
