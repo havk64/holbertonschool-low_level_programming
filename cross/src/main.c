@@ -11,16 +11,17 @@
  */
 
 #include "cross.h"
-
+/* 
+ * Main function, checks the user input.
+ */
 int main(int argc, char * argv[])
 {
+	if(argc == 1) return 0;
 	if(argc > 2 || isNum(argv[1])) {
 		print("Usage: cross number\n");
-		exit(1);
-	}
-	if(argv[1] != NULL) 
+		return (0);
+	} else {
 		printX(argv[1]);
-	else
-	       exit(1);
+	}
 	return (0);
 }
