@@ -1,4 +1,4 @@
-#include "header.c"
+#include "header.h"
 
 void free_cl_list(List * list) {
     List * head = list;
