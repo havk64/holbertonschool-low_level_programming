@@ -1,5 +1,10 @@
 #include "header.h"
 
+/* 
+ * 	This function gets the key-value pair from a hash table.
+ * 	@hashtable	:= the hash table.
+ * 	@key		:= the key from where we will retrive the value.
+ */
 char *ht_get(HashTable *hashtable, const char *key)
 {
 	unsigned int index;
