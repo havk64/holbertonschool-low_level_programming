@@ -1,5 +1,11 @@
 #include "header.h"
 
+/* 
+ * 	This function add an element to a hash table.
+ * 	@hashtable	:= the hash table to be filled.
+ * 	@key		:= the key of the key-value pair.
+ * 	@value		:= the value of the key-value pair. 
+ */
 int ht_put(HashTable *hashtable, const char *key, const char *value)
 {
 	unsigned int index;
