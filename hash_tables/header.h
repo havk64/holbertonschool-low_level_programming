@@ -9,3 +9,4 @@ unsigned int hash(const char *key, unsigned int size);
 int ht_put(HashTable *hashtable, const char *key, const char *value);
 int compare(const char * a, const char * b);
 char *ht_get(HashTable *hashtable, const char *key);
+void ht_free(HashTable *hashtable);
