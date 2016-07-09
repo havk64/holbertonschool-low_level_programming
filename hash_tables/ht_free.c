@@ -1,5 +1,9 @@
 #include "header.h"
 
+/* 
+ * 	This function frees the allocated memory of a hash table.
+ * 	@hastable	:= the hash table to be freed.
+ */
 void ht_free(HashTable *hashtable)
 {
 	List * bucket, * tmp;
