@@ -1,6 +1,10 @@
 #include "header.h"
 
-
+/* 
+ *	This function creates a hash table.
+ * 	@size	:= the size of the hash table.
+ * 	@return	:= a Hash Table.
+ */
 HashTable *ht_create(unsigned int size)
 {
 	unsigned int i;
