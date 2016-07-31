@@ -1,17 +1,19 @@
 #include "header.h"
-
-/* 
- * 	This function frees the allocated memory of a hash table.
- * 	@hastable	:= the hash table to be freed.
+/**
+ * This function frees the allocated memory of a hash table.
+ * @hastable	:= the hash table to be freed.
  */
 void ht_free(HashTable *hashtable)
 {
-	List * bucket, * tmp;
+	List *bucket, *tmp;
 	unsigned int size, i;
+
 	size = hashtable->size;
-	for(i = 0; i < size; i++) {
+	for (i = 0; i < size; i++)
+	{
 		bucket = hashtable->array[i];
-		while(bucket != NULL) {
+		while (bucket != NULL)
+		{
 			free(bucket->value);
 			free(bucket->key);
 			tmp = bucket;
