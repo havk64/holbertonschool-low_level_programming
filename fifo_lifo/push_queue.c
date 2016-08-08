@@ -1,7 +1,7 @@
 #include "head.h"
 /*
  * This function that enqueue an element in a list.
- * /
+ */
 int push_queue(Queue **queue, char *str)
 {
 	Queue *node;
@@ -11,12 +11,12 @@ int push_queue(Queue **queue, char *str)
 		while (node->next != NULL) {
 			node = node->next;
 		}
-		node->next = (Queue *) malloc(sizeof(Queue));
+		node->next = malloc(sizeof(Queue));
 		if (node->next == NULL)
 			return (1);
 		node = node->next;
 	} else {
-		node = (Queue *) malloc(sizeof(Queue));
+		node = malloc(sizeof(Queue));
 		if (node->next == NULL)
 			return (1);
 		*queue = node;
