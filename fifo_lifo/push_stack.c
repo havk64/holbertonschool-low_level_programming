@@ -1,5 +1,7 @@
 #include "head.h"
-
+/*
+ * This function pushes an element on the top of a Stack
+ */
 int push_stack(Stack **stack, char *str)
 {
         Stack *node;
@@ -8,10 +10,7 @@ int push_stack(Stack **stack, char *str)
         if (node == NULL)
                 return(1);
         node->str = strdup(str);
-        if (*stack == NULL)
-                node->next = NULL;
-        else
-                node->next = *stack;
+	node->next = (*stack == NULL) ? NULL : *stack;
         *stack = node;
         return(0);
 }
