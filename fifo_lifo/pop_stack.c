@@ -1,5 +1,7 @@
 #include "head.h"
-
+/*
+ * This function pops an element from a Stack
+ */
 char *pop_stack(Stack **stack)
 {
 	Stack *node;
