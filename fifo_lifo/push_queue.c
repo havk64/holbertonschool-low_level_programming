@@ -7,18 +7,14 @@ int push_queue(Queue **queue, char *str)
 	Queue *node;
 	node = *queue;
 
-	if (queue != NULL) {
+	if (node != NULL) {
 		while (node->next != NULL) {
 			node = node->next;
 		}
 		node->next = malloc(sizeof(Queue));
-		if (node->next == NULL)
-			return (1);
 		node = node->next;
 	} else {
 		node = malloc(sizeof(Queue));
-		if (node->next == NULL)
-			return (1);
 		*queue = node;
 	}
 	node->next = NULL;
