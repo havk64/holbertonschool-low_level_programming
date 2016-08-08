@@ -1,5 +1,7 @@
 #include "head.h"
-
+/*
+ * This function that enqueue an element in a list.
+ * /
 int push_queue(Queue **queue, char *str)
 {
 	Queue *node;
