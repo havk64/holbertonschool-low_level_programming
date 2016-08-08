@@ -1,5 +1,7 @@
 #include "head.h"
-
+/*
+ * This function returns a copy of the  data of the first element
+ */
 char *pop_queue(Queue **queue)
 {
 	char *data;
